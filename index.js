@@ -2,7 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import createConnection from "./models/db.js";
-import { createAdminTable } from "./models/admin.model.js";
+import { createAdminTable } from "./models/market_price.model.js";
 await createConnection();
 await createAdminTable();
 
