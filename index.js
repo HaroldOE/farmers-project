@@ -1,6 +1,10 @@
 import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
+import createConnection from "./models/db.js";
+import { createAdminTable } from "./models/admin.model.js";
+await createConnection();
+await createAdminTable();
 
 dotenv.config();
 const app = express();
