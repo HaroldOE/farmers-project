@@ -2,9 +2,8 @@ import mysql from "mysql2/promise";
 import dotenv from "dotenv";
 
 dotenv.config();
-const db = await mysql();
 
-export const createConnection = async () => {
+async function createConnection() {
   try {
     const connection = await mysql.createConnection({
       host: process.env.DB_HOST,
@@ -22,4 +21,6 @@ export const createConnection = async () => {
     console.error("an error occured ", error);
     throw error;
   }
-};
+}
+
+export default createConnection;
