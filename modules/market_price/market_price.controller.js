@@ -10,13 +10,13 @@ export const createMarketPrice = async (req, res) => {
     }
 
     const id = await MarketPrice.create({ crop_type, market, price, date });
-    res.status(201).json({
+    return res.status(201).json({
       message: "Market price created successfully",
       id,
     });
   } catch (error) {
     console.error("Error creating market price:", error);
-    res.status(500).json({ message: "Server error" });
+    return res.status(500).json({ message: "Server error" });
   }
 };
 
@@ -24,10 +24,10 @@ export const createMarketPrice = async (req, res) => {
 export const getAllMarketPrices = async (req, res) => {
   try {
     const prices = await MarketPrice.findAll();
-    res.status(200).json(prices);
+    return res.status(200).json(prices);
   } catch (error) {
     console.error("Error fetching market prices:", error);
-    res.status(500).json({ message: "Server error" });
+    return res.status(500).json({ message: "Server error" });
   }
 };
 
@@ -41,10 +41,10 @@ export const getMarketPriceById = async (req, res) => {
       return res.status(404).json({ message: "Market price not found" });
     }
 
-    res.status(200).json(price);
+    return res.status(200).json(price);
   } catch (error) {
     console.error("Error fetching market price:", error);
-    res.status(500).json({ message: "Server error" });
+    return res.status(500).json({ message: "Server error" });
   }
 };
 
@@ -65,10 +65,10 @@ export const updateMarketPrice = async (req, res) => {
       return res.status(404).json({ message: "Market price not found" });
     }
 
-    res.status(200).json({ message: "Market price updated successfully" });
+    return res.status(200).json({ message: "Market price updated successfully" });
   } catch (error) {
     console.error("Error updating market price:", error);
-    res.status(500).json({ message: "Server error" });
+    return res.status(500).json({ message: "Server error" });
   }
 };
 
@@ -82,9 +82,9 @@ export const deleteMarketPrice = async (req, res) => {
       return res.status(404).json({ message: "Market price not found" });
     }
 
-    res.status(200).json({ message: "Market price deleted successfully" });
+    return res.status(200).json({ message: "Market price deleted successfully" });
   } catch (error) {
     console.error("Error deleting market price:", error);
-    res.status(500).json({ message: "Server error" });
+    return res.status(500).json({ message: "Server error" });
   }
 };
