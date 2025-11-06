@@ -16,3 +16,5 @@ marketPriceRouter.put("/:id", updateMarketPrice); // Update
 marketPriceRouter.delete("/:id", deleteMarketPrice); // Delete
 
 export default marketPriceRouter;
+
+//http://localhost:3000/api/market-price/
