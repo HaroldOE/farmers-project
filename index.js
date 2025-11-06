@@ -13,7 +13,7 @@ app.use(express.json());
 
 const PORT = process.env.PORT;
 app.get("/api/test", (req, res) => {
-  return res.status(200).json({ message: "everywhere good" });
+  return res.status(200).json({message: "Everywhere good" });
 });
 
 app.listen(PORT, () => {
