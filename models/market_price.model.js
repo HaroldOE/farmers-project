@@ -8,7 +8,7 @@ export const createAdminTable = async () => {
         id INT AUTO_INCREMENT PRIMARY KEY,
         crop_type VARCHAR(255),
         market    VARCHAR(255),
-        price     decimal(10.2),
+        price     decimal(10,2),
         date      datetime,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
