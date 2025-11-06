@@ -4,7 +4,7 @@ const db = await createConnection();
 
 export const createMarketPriceTable = async () => {
   try {
-    await db.query (`CREATE TABLE IF NOT EXISTS market_prices(
+    await db.query(`CREATE TABLE IF NOT EXISTS market_prices(
         id INT AUTO_INCREMENT PRIMARY KEY,
         crop_type VARCHAR(255),
         market    VARCHAR(255),
