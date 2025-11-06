@@ -5,7 +5,8 @@ import createConnection from "./models/db.js";
 
 // Import tables
 import { createMarketPriceTable } from "./models/market_price.model.js";
-
+//import { createProductTable } from "";
+import { createProductsTable } from "./models/product.model.js";
 // Import end points
 import marketPriceRouter from "./modules/market_price/market_price.route.js";
 
@@ -14,6 +15,7 @@ import productrouter from "./modules/products/product.route.js";
 
 await createConnection();
 await createMarketPriceTable();
+await createProductsTable();
 
 dotenv.config();
 const app = express();

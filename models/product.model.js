@@ -75,3 +75,4 @@ export const Product = {
     return result.affectedRows;
   },
 };
+
