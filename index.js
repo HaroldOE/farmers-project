@@ -9,6 +9,9 @@ import { createMarketPriceTable } from "./models/market_price.model.js";
 // Import end points
 import marketPriceRouter from "./modules/market_price/market_price.route.js";
 
+// Import product routes
+import productrouter from "./modules/products/product.route.js";
+
 await createConnection();
 await createMarketPriceTable();
 
@@ -19,7 +22,7 @@ app.use(express.json());
 
 // endpoints
 app.use("/api/market-price", marketPriceRouter);
-
+app.use("/api/products", productrouter);
 const PORT = process.env.PORT;
 app.get("/api/test", (req, res) => {
   return res.status(200).json({ message: "everywhere good" });

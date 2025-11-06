@@ -4,7 +4,7 @@ const db = await createConnection();
 
 export const createMarketPriceTable = async () => {
   try {
-    const query = `CREATE TABLE IF NOT EXISTS market_prices(
+    await db.query (`CREATE TABLE IF NOT EXISTS market_prices(
         id INT AUTO_INCREMENT PRIMARY KEY,
         crop_type VARCHAR(255),
         market    VARCHAR(255),
@@ -13,7 +13,7 @@ export const createMarketPriceTable = async () => {
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 
-    )`;
+    )`);
     console.log("market price table created successfully");
   } catch (error) {
     console.error("an error occured creating table ", error);
