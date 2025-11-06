@@ -13,7 +13,7 @@ export const createMarketPriceTable = async () => {
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 
-    )`);
+    )`;
     console.log("market price table created successfully");
   } catch (error) {
     console.error("an error occured creating table ", error);
